@@ -3,6 +3,7 @@ package com.sundaypyjamas.sundaypyjamas_simplestepscounter.Util;
 import android.app.Application;
 import android.content.Context;
 import android.graphics.Typeface;
+import android.support.design.widget.TextInputLayout;
 import android.widget.TextView;
 
 /**
@@ -18,6 +19,18 @@ public class Util extends Application{
     public static void setRalewayThin(Context context, TextView... textView) {
         Typeface typeface = Typeface.createFromAsset(context.getAssets(),"fonts/Raleway-Regular.ttf");
         for(TextView tv: textView)
+        {
+            tv.setTypeface(typeface);
+        }
+    }
+    public static void setRalewayThin(Context context, TextInputLayout textView) {
+        Typeface typeface = Typeface.createFromAsset(context.getAssets(),"fonts/Raleway-Regular.ttf");
+        textView.setTypeface(typeface);
+    }
+
+    public static void setRalewayThin(Context context, TextInputLayout... textView) {
+        Typeface typeface = Typeface.createFromAsset(context.getAssets(),"fonts/Raleway-Regular.ttf");
+        for(TextInputLayout tv: textView)
         {
             tv.setTypeface(typeface);
         }

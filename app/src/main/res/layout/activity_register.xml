@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.sundaypyjamas.sundaypyjamas_simplestepscounter.RegisterActivity">
+    android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/register_background"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/background"
+        android:background="@drawable/back1"
         android:scaleType="fitXY" />
 
     <android.support.v7.widget.CardView
@@ -32,7 +31,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/header_login_card"
+                android:id="@+id/header_register_card"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/_7sdp"
@@ -49,141 +48,193 @@
                 android:id="@+id/view_seperator_card"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_2sdp"
-                android:layout_below="@+id/header_login_card"
+                android:layout_below="@+id/header_register_card"
                 android:background="@color/reddark"></View>
 
-            <EditText
-                android:id="@+id/username_card_register"
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/etUsernameReg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/view_seperator_card"
                 android:layout_marginLeft="@dimen/_20sdp"
                 android:layout_marginRight="@dimen/_20sdp"
-                android:layout_marginTop="@dimen/_20sdp"
-                android:background="@android:color/transparent"
-                android:fontFamily="sans-serif-thin"
-                android:freezesText="true"
-                android:hint=" Username"
-                android:inputType="textNoSuggestions"
-                android:textColor="@color/reddark"
-                android:textColorHint="@color/greyDark"
-                android:textSize="@dimen/_17sdp" />
+
+                android:layout_marginTop="@dimen/_5sdp"
+                android:hint="Username"
+                android:textColorHint="@color/greyDark">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/username_card_register"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/view_seperator_card"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="sans-serif-thin"
+                    android:freezesText="true"
+                    android:inputType="textNoSuggestions"
+                    android:textColor="@color/reddark"
+                    android:textSize="@dimen/_17sdp" />
+            </android.support.design.widget.TextInputLayout>
 
             <View
                 android:id="@+id/view_separator_uname"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_1sdp"
-                android:layout_below="@+id/username_card_register"
+                android:layout_below="@+id/etUsernameReg"
                 android:layout_marginLeft="@dimen/_20sdp"
                 android:layout_marginRight="@dimen/_20sdp"
                 android:background="@color/greyDark"></View>
 
-            <EditText
-                android:id="@+id/email_card_register"
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/etEmailLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/username_card_register"
+                android:layout_below="@+id/etUsernameReg"
                 android:layout_marginLeft="@dimen/_20sdp"
                 android:layout_marginRight="@dimen/_20sdp"
-                android:layout_marginTop="@dimen/_20sdp"
-                android:background="@android:color/transparent"
-                android:fontFamily="sans-serif-thin"
-                android:freezesText="true"
+
+                android:layout_marginTop="@dimen/_5sdp"
                 android:hint=" Email"
-                android:inputType="textNoSuggestions"
-                android:textColor="@color/reddark"
-                android:textColorHint="@color/greyDark"
-                android:textSize="@dimen/_17sdp" />
+                android:textColorHint="@color/greyDark">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/email_card_register"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/username_card_register"
+                    android:layout_marginBottom="@dimen/_10sdp"
+
+                    android:background="@android:color/transparent"
+                    android:fontFamily="sans-serif-thin"
+                    android:freezesText="true"
+                    android:inputType="textEmailAddress"
+                    android:textColor="@color/reddark"
+                    android:textSize="@dimen/_17sdp" />
+            </android.support.design.widget.TextInputLayout>
+
 
             <View
                 android:id="@+id/view_seperator_email"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_1sdp"
-                android:layout_below="@+id/email_card_register"
+                android:layout_below="@+id/etEmailLayout"
                 android:layout_marginLeft="@dimen/_20sdp"
                 android:layout_marginRight="@dimen/_20sdp"
+
                 android:background="@color/greyDark"></View>
 
-            <EditText
-                android:id="@+id/phone_register"
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/etphoneLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/email_card_register"
+                android:layout_below="@+id/etEmailLayout"
                 android:layout_marginLeft="@dimen/_20sdp"
                 android:layout_marginRight="@dimen/_20sdp"
-                android:layout_marginTop="@dimen/_20sdp"
-                android:background="@android:color/transparent"
-                android:fontFamily="sans-serif-thin"
-                android:freezesText="true"
+                android:layout_marginTop="@dimen/_5sdp"
                 android:hint=" Phone"
-                android:inputType="textNoSuggestions"
-                android:textColor="@color/reddark"
-                android:textColorHint="@color/greyDark"
-                android:textSize="@dimen/_17sdp" />
+
+                android:textColorHint="@color/greyDark">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/phone_register"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/email_card_register"
+                    android:layout_marginBottom="@dimen/_10sdp"
+
+                    android:background="@android:color/transparent"
+                    android:fontFamily="sans-serif-thin"
+                    android:freezesText="true"
+                    android:inputType="phone"
+                    android:maxLength="10"
+                    android:textColor="@color/reddark"
+                    android:textSize="@dimen/_17sdp" />
+            </android.support.design.widget.TextInputLayout>
 
             <View
                 android:id="@+id/view_seperator_phone"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_1sdp"
-                android:layout_below="@+id/phone_register"
+                android:layout_below="@+id/etphoneLayout"
                 android:layout_marginLeft="@dimen/_20sdp"
                 android:layout_marginRight="@dimen/_20sdp"
                 android:background="@color/greyDark"></View>
 
-            <EditText
-                android:id="@+id/password_card_login"
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/etPasswordLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/phone_register"
-                android:layout_marginLeft="@dimen/_20sdp"
-                android:layout_marginRight="@dimen/_20sdp"
-
-                android:layout_marginTop="@dimen/_20sdp"
-                android:background="@android:color/transparent"
-                android:drawableRight="@drawable/ic_remove_red_eye"
-                android:drawableTint="@color/reddark"
+                android:layout_below="@+id/view_seperator_phone"
                 android:fontFamily="sans-serif-thin"
-                android:freezesText="true"
-                android:hint=" Password"
-                android:inputType="textPassword"
-                android:textColor="@color/reddark"
+                android:hint="Password"
                 android:textColorHint="@color/greyDark"
-                android:textSize="@dimen/_17sdp" />
+                app:passwordToggleDrawable="@drawable/ic_remove_red_eye"
+                app:passwordToggleEnabled="true"
+
+                app:passwordToggleTint="@color/reddark"
+                app:passwordToggleTintMode="src_atop">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/etPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_marginRight="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:background="@android:color/transparent"
+                    android:freezesText="true"
+                    android:inputType="textPassword"
+                    android:textColor="@color/reddark"
+                    android:textSize="@dimen/_17sdp" />
+            </android.support.design.widget.TextInputLayout>
 
             <View
                 android:id="@+id/view_seperator_pass"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_1sdp"
-                android:layout_below="@+id/password_card_login"
+                android:layout_below="@+id/etPasswordLayout"
                 android:layout_marginLeft="@dimen/_20sdp"
                 android:layout_marginRight="@dimen/_20sdp"
+
+
                 android:background="@color/greyDark"></View>
 
-            <EditText
-                android:id="@+id/confirm_pass_card_register"
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/cnf_pass_layput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/password_card_login"
-                android:layout_marginLeft="@dimen/_20sdp"
-                android:layout_marginRight="@dimen/_20sdp"
-
-                android:layout_marginTop="@dimen/_20sdp"
-                android:background="@android:color/transparent"
-                android:drawableRight="@drawable/ic_remove_red_eye"
-                android:drawableTint="@color/reddark"
+                android:layout_below="@+id/etPasswordLayout"
                 android:fontFamily="sans-serif-thin"
-                android:freezesText="true"
-                android:hint=" Confirm Password"
-                android:inputType="textPassword"
-                android:textColor="@color/reddark"
+                android:hint="Confirm Password"
                 android:textColorHint="@color/greyDark"
-                android:textSize="@dimen/_17sdp" />
+                app:passwordToggleDrawable="@drawable/ic_remove_red_eye"
+                app:passwordToggleEnabled="true"
+
+                app:passwordToggleTint="@color/reddark"
+                app:passwordToggleTintMode="src_atop">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/cnf_pass"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_marginRight="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+
+                    android:background="@android:color/transparent"
+                    android:freezesText="true"
+                    android:hint=" Confirm password"
+                    android:inputType="textPassword"
+                    android:textColor="@color/reddark"
+                    android:textSize="@dimen/_17sdp" />
+            </android.support.design.widget.TextInputLayout>
 
             <View
                 android:id="@+id/view_seperator_confirm_pass"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_1sdp"
-                android:layout_below="@+id/confirm_pass_card_register"
+                android:layout_below="@+id/cnf_pass_layput"
                 android:layout_marginLeft="@dimen/_20sdp"
                 android:layout_marginRight="@dimen/_20sdp"
                 android:background="@color/greyDark"></View>
@@ -192,7 +243,7 @@
                 android:id="@+id/terms_cond_register"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/confirm_pass_card_register"
+                android:layout_below="@+id/cnf_pass_layput"
                 android:layout_marginTop="@dimen/_20sdp">
 
                 <CheckBox
@@ -209,7 +260,7 @@
                     android:layout_marginTop="@dimen/_6sdp"
                     android:layout_toRightOf="@+id/checkbox_tnc"
                     android:fontFamily="sans-serif-thin"
-                    android:text="I hereby confirm the License Agreeent"
+                    android:text="I hereby accept the License Agreeent"
                     android:textColor="#252525"
                     android:textSize="@dimen/_10sdp" />
             </RelativeLayout>
@@ -234,22 +285,22 @@
     </android.support.v7.widget.CardView>
 
     <Button
-        android:id="@+id/register"
+        android:id="@+id/back"
         android:layout_width="@dimen/_120sdp"
         android:layout_height="@dimen/_33sdp"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/card_register"
         android:layout_marginRight="0dp"
-        android:layout_marginTop="@dimen/_42sdp"
+        android:layout_marginTop="@dimen/_22sdp"
         android:background="@drawable/capsule2"
         android:backgroundTint="@color/reddark"
-        android:drawableRight="@drawable/ic_action_arrow_right"
         android:drawablePadding="@dimen/_10sdp"
+        android:drawableRight="@drawable/right_arrow"
         android:drawableTint="#fff"
-        android:paddingLeft="@dimen/_5sdp"
         android:fontFamily="sans-serif-thin"
+        android:paddingLeft="@dimen/_5sdp"
         android:paddingRight="@dimen/_16sdp"
-        android:text="Register"
+        android:text="Login"
         android:textAllCaps="false"
         android:textSize="@dimen/_15sdp" />
 </RelativeLayout>

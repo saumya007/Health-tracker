@@ -5,7 +5,7 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/red</item>
         <item name="colorPrimaryDark">@color/reddark</item>
-        <item name="colorAccent">@color/grey</item>
+        <item name="colorAccent">@color/reddark</item>
     </style>
 
     <color name="red">#f44336</color>

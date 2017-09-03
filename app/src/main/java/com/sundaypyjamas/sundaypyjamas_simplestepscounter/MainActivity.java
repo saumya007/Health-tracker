@@ -8,6 +8,7 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
+import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -39,6 +40,9 @@ public class MainActivity extends AppCompatActivity {
     private EditText sp_uname, sp_pass;
     // Declaration of  buttons
     private Button sp_login_card, sp_register_back;
+
+    // declaration of text input layout
+    private TextInputLayout sp_unamel, sp_passl;
     // instance for firebase auth
     private FirebaseAuth mAuth;
 
@@ -51,13 +55,15 @@ public class MainActivity extends AppCompatActivity {
         sp_other_indicator = (TextView) findViewById(R.id.optional_text_login_card);
         sp_uname = (EditText) findViewById(R.id.username_card_login);
         sp_pass = (EditText) findViewById(R.id.password_card_login);
+        sp_unamel = (TextInputLayout) findViewById(R.id.etUsernameLogin);
+        sp_passl = (TextInputLayout) findViewById(R.id.etPasswordLayout);
         sp_login_card = (Button) findViewById(R.id.login_button_card);
         sp_register_back = (Button) findViewById(R.id.register);
         sp_need_help = (TextView) findViewById(R.id.help);
         if (sp_register_back.getVisibility() == View.GONE) {
             sp_register_back.setVisibility(View.VISIBLE);
         }
-        // on touch listener on edit text to show and hide contents of edit text
+    /*    // on touch listener on edit text to show and hide contents of edit text
         sp_pass.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -65,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
                 final int DRAWABLE_TOP = 1; // unique id for top drawble
                 final int DRAWABLE_RIGHT = 2; // unique id for right drawble
                 final int DRAWABLE_BOTTOM = 3; // unique id for bottom drawble
-                if (event.getAction() == MotionEvent.ACTION_UP) {
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
                     if (event.getRawX() >= (sp_pass.getRight() - sp_pass.getCompoundDrawables()[DRAWABLE_RIGHT].getBounds().width())) {
                         if (sp_pass.getInputType() == InputType.TYPE_TEXT_VARIATION_PASSWORD) // getting the input type of edit text
                         {
@@ -76,11 +82,18 @@ public class MainActivity extends AppCompatActivity {
                         return true;
                     }
                 }
+                else if(event.getAction() ==MotionEvent.ACTION_UP)
+                {
+                    sp_pass.setInputType(InputType.TYPE_TEXT_VARIATION_PASSWORD);
+
+                }
                 return false;
             }
-        });
+        });*/
         // settiing custom font for edit text, textview and buttons
         Util.setRalewayThin(getApplicationContext(), sp_header_login, sp_login_card, sp_other_indicator, sp_pass, sp_uname, sp_register_back, sp_need_help);
+
+        Util.setRalewayThin(getApplicationContext(), sp_unamel, sp_passl);
         // implementation of drag animation on register button
         final int x = sp_register_back.getLayoutParams().width;
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
@@ -104,16 +117,17 @@ public class MainActivity extends AppCompatActivity {
                 // drag action on register button
                 if (event.getAction() == MotionEvent.ACTION_MOVE) {
                     newwidth = y - x1 / 2;
+                    sp_register_back.setText("");
                     v.getLayoutParams().width = newwidth;
                     v.requestLayout(); // update button state
 
 
                 } else if (event.getAction() == MotionEvent.ACTION_UP) {
                     if (y <= width * 0.90) {
-
+                        sp_register_back.setText("Register");
                         v.getLayoutParams().width = x;
                         v.requestLayout(); // update button state
-                    } else if (y >= width * 0.90) {
+                    } else if (y > width * 0.90) {
                         sp_register_back.setAlpha(1.0f - ((float) y / (float) width));
                         sp_register_back.setVisibility(View.GONE);
                         // start register activity from main activity

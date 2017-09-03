@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "625548322296",
+    "firebase_url": "https://sundaypyjamassimplestepscount.firebaseio.com",
+    "project_id": "sundaypyjamassimplestepscount",
+    "storage_bucket": "sundaypyjamassimplestepscount.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:625548322296:android:555a9cafa2254c08",
+        "android_client_info": {
+          "package_name": "com.sundaypyjamas.sundaypyjamas_simplestepscounter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "625548322296-d9hu3mummq1mn1n3qecasjnlpjifqbi9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sundaypyjamas.sundaypyjamas_simplestepscounter",
+            "certificate_hash": "7b059cfd8a9d31f7bf15bc0f474a8207b4b98060"
+          }
+        },
+        {
+          "client_id": "625548322296-kliei1hk2hfjmpr0o3icg4jvia8posbi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQa5C0MbV2JZViDou6OmkLyn6CsuPa4Sw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "625548322296-kliei1hk2hfjmpr0o3icg4jvia8posbi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
